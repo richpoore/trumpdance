@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Trump Dancing GIF</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f7f7f7;
+      font-family: Arial, sans-serif;
+    }
+    img {
+      max-width: 90%;
+      max-height: 70%;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Random Trump Dancing GIF</h1>
+  <div id="gif-container">
+    <img id="random-gif" src="" alt="Trump Dancing">
+  </div>
+  <button id="new-gif-button">Get Another GIF</button>
+
+  <script>
+    const gifUrls = [
+      "https://media.giphy.com/media/3o7TKyha6CFA2Y5yko/giphy.gif",
+      "https://media.giphy.com/media/3o7TKLmWstzx5ni4s0/giphy.gif",
+      "https://media.giphy.com/media/3o7TKKdTrWqUwos8ys/giphy.gif",
+      "https://media.giphy.com/media/3o7TKInDRL9ALdRkQ0/giphy.gif"
+    ];
+
+    const randomGif = document.getElementById('random-gif');
+    const newGifButton = document.getElementById('new-gif-button');
+
+    function displayRandomGif() {
+      const randomIndex = Math.floor(Math.random() * gifUrls.length);
+      randomGif.src = gifUrls[randomIndex];
+    }
+
+    newGifButton.addEventListener('click', displayRandomGif);
+
+    // Initial GIF load
+    displayRandomGif();
+  </script>
+</body>
+</html>
